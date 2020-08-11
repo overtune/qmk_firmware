@@ -7,9 +7,9 @@
  */
 
 enum custom_keycodes {
-  SE_ARING = SAFE_RANGE,
-  SE_AUML,
-  SE_OUML,
+	SE_ARING = SAFE_RANGE,
+	SE_AUML,
+	SE_OUML,
 };
 
 
@@ -58,24 +58,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case SE_ARING:
-      if (record->event.pressed) {
-		SEND_STRING(SS_DOWN(X_LALT)"a"SS_UP(X_LALT));
-      break;
-    case SE_AUML:
-      if (record->event.pressed) {
-		SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"a");
-      break;
-    case SE_OUML:
-      if (record->event.pressed) {
-        // when keycode QMKBEST is pressed
-		SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"o");
-      } else {
-        // when keycode QMKBEST is released
-      }
-      break;
+	switch (keycode) {
+		case SE_ARING:
+			if (record->event.pressed) {
+				SEND_STRING(SS_DOWN(X_LALT)"a"SS_UP(X_LALT));
+				break;
+			}
+		case SE_AUML:
+			if (record->event.pressed) {
+				SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"a");
+				break;
+			}
+		case SE_OUML:
+			if (record->event.pressed) {
+				// when keycode QMKBEST is pressed
+				SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"o");
+			} else {
+				// when keycode QMKBEST is released
+			}
+			break;
 
-  }
-  return true;
+	}
+	return true;
 };
