@@ -17,7 +17,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* Layer 0
+/* Layer 0 (default)
  * ,------------------------------------------------------------------------------------------------------.
  * | Esc      |  Q   |  W  |  E  |   R   |     T       |     Y      |   U   | I | O |   P   |    Bksp     |
  * |----------+------+-----+-----+-------+-------------+------------+-------+---+---+-------+-------------|
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	TG(1),          KC_LCTL, KC_LALT, KC_LGUI, MO(4), LT(3,KC_SPC), LT(2,KC_BSPC), MO(2), KC_ASTR, KC_MINS, MO(5),   LALT(KC_GRV)
 ),
 
-/* Layer 1
+/* Layer 1 (writing swedish)
  * ,-----------------------------------------------.
  * | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | Å |
  * |---+---+---+---+---+---+---+---+---+---+---+---|
@@ -46,7 +46,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
  * `-----------------------------------------------'
  */
-
 [1] = LAYOUT_ortho_4x12(
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, SE_ARING, 
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, SE_OUML, SE_AUML, 
@@ -54,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
-/* Layer 2
+/* Layer 2 (symbols and numpad)
  * ,------------------------------------------------.
  * | ▽ | ! | @ | { | } |   |   |   | 7 | 8 | 9  |   |
  * |---+---+---+---+---+---+---+---+---+---+----+---|
@@ -65,7 +64,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   |   |   |   | ▽ | ▽ | ▽ | ▽ | - | 0 | =+ |   |
  * `------------------------------------------------'
  */
-
 [2] = LAYOUT_ortho_4x12(
 	KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_NO,   KC_NO,   KC_NO,   KC_P7,   KC_P8, KC_P9,  KC_NO, 
 	KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_P4,   KC_P5, KC_P6,  KC_NO, 
@@ -73,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINS, KC_P0, KC_EQL, KC_NO
 ),
 
-/* Layer 3
+/* Layer 3 (mouse and arrow keys)
  * ,----------------------------------------------------------------------------------------------------------------------.
  * | ▽ |   |  Mouse 1   |  Mouse Up  |   Mouse 2   |   |      |   Mouse Acc 0    |  Mouse Acc 1   | Mouse Acc 2 | =+ |    |
  * |---+---+------------+------------+-------------+---+------+------------------+----------------+-------------+----+----|
@@ -91,6 +89,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO
 ),
 
+/* Layer 4 (Function keys and media)
+ * ,-------------------------------------------------------------------------------.
+ * | `~  | 1! | 2@ | 3# | 4$  | 5%  | 6^  | 7& |  8*  |   9(    |    0)     | Bksp |
+ * |-----+----+----+----+-----+-----+-----+----+------+---------+-----------+------|
+ * | Del | F1 | F2 | F3 | F4  | F5  | F6  | -_ |  =+  |   [{    |    ]}     |  \|  |
+ * |-----+----+----+----+-----+-----+-----+----+------+---------+-----------+------|
+ * |  ▽  | F7 | F8 | F9 | F10 | F11 | F12 | \| |  §±  | Page up | Page down |  ▽   |
+ * |-----+----+----+----+-----+-----+-----+----+------+---------+-----------+------|
+ * |  ▽  | ▽  | ▽  | ▽  |  ▽  |  ▽  |  ▽  | ▽  | Next |  Vol -  |   Vol +   | Play |
+ * `-------------------------------------------------------------------------------'
+ */
 [4] = LAYOUT_ortho_4x12(
 	KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, 
 	KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, 
@@ -98,6 +107,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
+/* Layer 5 (macros)
+ * ,-----------------------------------------------------.
+ * | MVH | EMAIL | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | Å |
+ * |-----+-------+---+---+---+---+---+---+---+---+---+---|
+ * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ö | ä |
+ * |-----+-------+---+---+---+---+---+---+---+---+---+---|
+ * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * |-----+-------+---+---+---+---+---+---+---+---+---+---|
+ * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * `-----------------------------------------------------'
+ */
 [5] = LAYOUT_ortho_4x12(
 	MSG_MVH, MSG_EMAIL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
 	KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
@@ -118,31 +138,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case SE_ARING:
 			if (record->event.pressed) {
 				SEND_STRING(SS_DOWN(X_LALT)"a"SS_UP(X_LALT));
-				break;
 			}
+			break;
 		case SE_AUML:
 			if (record->event.pressed) {
 				SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"a");
-				break;
 			}
+			break;
 		case SE_OUML:
 			if (record->event.pressed) {
-				// when keycode QMKBEST is pressed
 				SEND_STRING(SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"o");
-			} else {
-				// when keycode QMKBEST is released
 			}
 			break;
 		case MSG_MVH:
 			if (record->event.pressed) {
 				SEND_STRING("Med v"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"anliga h"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"alsningar, Johan Runesson");
-				break;
 			}
+			break;
 		case MSG_EMAIL:
 			if (record->event.pressed) {
 				SEND_STRING("info@johanrunesson.se");
-				break;
 			}
+			break;
 	}
 	return true;
 };
