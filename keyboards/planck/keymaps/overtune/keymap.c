@@ -10,9 +10,11 @@ enum custom_keycodes {
 	SE_ARING = SAFE_RANGE,
 	SE_AUML,
 	SE_OUML,
+	MSG_MVHJ,
 	MSG_MVH,
 	MSG_EMAIL,
 	GIT_CP,
+	SMILEY,
 };
 
 
@@ -109,21 +111,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 /* Layer 5 (macros)
- * ,-----------------------------------------------------.
- * | MVH | EMAIL | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | Å |
- * |-----+-------+---+---+---+---+---+---+---+---+---+---|
- * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ö | ä |
- * |-----+-------+---+---+---+---+---+---+---+---+---+---|
- * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * |-----+-------+---+---+---+---+---+---+---+---+---+---|
- * |  ▽  |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * `-----------------------------------------------------'
+ * ,-----------------------------------------------------------.
+ * |  MVH   | MVHJ | EMAIL | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+---|
+ * | GIT CP |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+---|
+ * |    ▽   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+---|
+ * |   :)   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
+ * `-----------------------------------------------------------'
  */
 [5] = LAYOUT_ortho_4x12(
-	MSG_MVH, MSG_EMAIL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
-	GIT_CP,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
-	KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
-	KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+	MSG_MVH, MSG_MVHJ, MSG_EMAIL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
+	GIT_CP,  KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
+	KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
+	SMILEY,  KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 [6] = LAYOUT_ortho_4x12(
@@ -153,6 +155,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case MSG_MVH:
 			if (record->event.pressed) {
+				SEND_STRING("Med v"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"anliga h"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"alsningar");
+			}
+			break;
+		case MSG_MVHJ:
+			if (record->event.pressed) {
 				SEND_STRING("Med v"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"anliga h"SS_DOWN(X_LALT)"u"SS_UP(X_LALT)"alsningar, Johan Runesson");
 			}
 			break;
@@ -164,6 +171,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case GIT_CP:
 			if (record->event.pressed) {
 				SEND_STRING("ga . && gcmsg \"\" && gp"SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT));
+			}
+			break;
+		case SMILEY:
+			if (record->event.pressed) {
+				SEND_STRING(":)");
 			}
 			break;
 	}
