@@ -111,18 +111,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 /* Layer 5 (macros)
- * ,-----------------------------------------------------------.
- * |  MVH   | MVHJ | EMAIL | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * |--------+------+-------+---+---+---+---+---+---+---+---+---|
- * | GIT CP |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * |--------+------+-------+---+---+---+---+---+---+---+---+---|
- * |    ▽   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * |--------+------+-------+---+---+---+---+---+---+---+---+---|
- * |   :)   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |
- * `-----------------------------------------------------------'
+ * ,----------------------------------------------------------------.
+ * |  MVH   | MVHJ | EMAIL | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | MU_TOG |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+--------|
+ * | GIT CP |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |   ▽    |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+--------|
+ * |    ▽   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |   ▽    |
+ * |--------+------+-------+---+---+---+---+---+---+---+---+--------|
+ * |   :)   |  ▽   |   ▽   | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ | ▽ |   ▽    |
+ * `----------------------------------------------------------------'
  */
 [5] = LAYOUT_ortho_4x12(
-	MSG_MVH, MSG_MVHJ, MSG_EMAIL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
+	MSG_MVH, MSG_MVHJ, MSG_EMAIL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MU_TOG, 
 	GIT_CP,  KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
 	KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, 
 	SMILEY,  KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
