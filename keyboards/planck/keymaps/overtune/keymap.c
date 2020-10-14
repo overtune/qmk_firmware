@@ -58,20 +58,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Layer 2 (symbols and numpad)
  * ,------------------------------------------------.
- * | ▽ | ! | @ | { | } |   |   |   | 7 | 8 | 9  |   |
+ * | ▽ | ! | @ | { | } |   |   |   |   | 7 | 8 | 9  |
  * |---+---+---+---+---+---+---+---+---+---+----+---|
- * | ▽ | # | $ | ( | ) |   |   |   | 4 | 5 | 6  |   |
+ * | ▽ | # | $ | ( | ) |   |   |   |   | 4 | 5 | 6  |
  * |---+---+---+---+---+---+---+---+---+---+----+---|
- * | ▽ | % | ^ | [ | ] |   |   |   | 1 | 2 | 3  |   |
+ * | ▽ | % | ^ | [ | ] |   |   |   |   | 1 | 2 | 3  |
  * |---+---+---+---+---+---+---+---+---+---+----+---|
- * |   |   |   |   | ▽ | ▽ | ▽ | ▽ | - | 0 | =+ |   |
+ * |   |   |   |   | ▽ | ▽ | ▽ | ▽ |   | - | 0 | =+ |
  * `------------------------------------------------'
  */
 [2] = LAYOUT_ortho_4x12(
-	KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_NO,   KC_NO,   KC_NO,   KC_P7,   KC_P8, KC_P9,  KC_NO, 
-	KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_P4,   KC_P5, KC_P6,  KC_NO, 
-	KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_NO,   KC_NO,   KC_NO,   KC_P1,   KC_P2, KC_P3,  KC_NO, 
-	KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MINS, KC_P0, KC_EQL, KC_NO
+	KC_TRNS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_NO,   KC_NO,   KC_NO,   KC_NO, 	 KC_P7,   KC_P8, KC_P9, 
+	KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO, 	 KC_P4,   KC_P5, KC_P6, 
+	KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_NO,   KC_NO,   KC_NO,   KC_NO, 	 KC_P1,   KC_P2, KC_P3, 
+	KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, 	 KC_MINS, KC_P0, KC_EQL
 ),
 
 /* Layer 3 (mouse and arrow keys)
